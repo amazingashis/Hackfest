@@ -215,6 +215,21 @@
   margin: 0 0.8rem;
 }
 
+.footer-first {
+  background-color: #064e62;
+  padding: 5rem 0;
+  margin: 3rem 0 0 0;
+  color: #f8f3e8;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.459);
+}
+
+.footer-second {
+  background-color: #06363a;
+  padding: 2rem 0;
+  color: #eaebe6;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.459);
+}
+
 body {
   background-color: aliceblue;
 }
