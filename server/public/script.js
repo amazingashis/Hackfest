@@ -1,37 +1,57 @@
-import {MnistData} from './data.js';
+// let imageLoaded = false;
+// 	$("#image-selector").change(function () {
+// 		imageLoaded = false;
+// 		let reader = new FileReader();
+// 		reader.onload = function () {
+// 			let dataURL = reader.result;
+// 			$("#selected-image").attr("src", dataURL);
+// 			$("#prediction-list").empty();
+// 			imageLoaded = true;
+// 		}
+		
+// 		let file = $("#image-selector").prop('files')[0];
+// 		reader.readAsDataURL(file);
+// 	});
 
-async function showExamples(data) {
-  // Create a container in the visor
-  const surface =
-    tfvis.visor().surface({ name: 'Input Data Examples', tab: 'Input Data'});  
+// 	let model;
+// 	let modelLoaded = false;
+// 	$( document ).ready(async function () {
+// 		modelLoaded = false;
+// 		$('.progress-bar').show();
+// 		console.log( "Loading model..." );
+// 		model = await tf.loadGraphModel('model/model.json');
+// 		console.log( "Model loaded." );
+// 		$('.progress-bar').hide();
+// 		modelLoaded = true;
+// 	});
 
-  // Get the examples
-  const examples = data.nextTestBatch(20);
-  const numExamples = examples.xs.shape[0];
-  
-  // Create a canvas element to render each example
-  for (let i = 0; i < numExamples; i++) {
-    const imageTensor = tf.tidy(() => {
-      // Reshape the image to 28x28 px
-      return examples.xs
-        .slice([i, 0], [1, examples.xs.shape[1]])
-        .reshape([50, 50, 1]);
-    });
-    
-    const canvas = document.createElement('canvas');
-    canvas.width = 50;
-    canvas.height = 50;
-    canvas.style = 'margin: 4px;';
-    await tf.browser.toPixels(imageTensor, canvas);
-    surface.drawArea.appendChild(canvas);
+// 	$("#predict-button").click(async function () {
+// 		if (!modelLoaded) { alert("The model must be loaded first"); return; }
+// 		if (!imageLoaded) { alert("Please select an image first"); return; }
+		
+// 		let image = $('#selected-image').get(0);
+		
+// 		// Pre-process the image
+// 		console.log( "Loading image..." );
+// 		let tensor = tf.browser.fromPixels(image, 3)
+// 			.resizeNearestNeighbor([224, 224]) // change the image size
+// 			.expandDims()
+// 			.toFloat()
+// 			.reverse(-1); // RGB -> BGR
+// 		let predictions = await model.predict(tensor).data();
+// 		console.log(predictions);
+// 		let top5 = Array.from(predictions)
+// 			.map(function (p, i) { // this is Array.map
+// 				return {
+// 					probability: p,
+// 					className: TARGET_CLASSES[i] // we are selecting the value from the obj
+// 				};
+// 			}).sort(function (a, b) {
+// 				return b.probability - a.probability;
+// 			}).slice(0, 2);
 
-    imageTensor.dispose();
-  }
-}
-
-async function run() {  
-  const data = new MnistData();
-  await data.load();
-  await showExamples(data);
-}
-document.addEventListener('DOMContentLoaded', run);
+// 		$("#prediction-list").empty();
+// 		top5.forEach(function (p) {
+// 			$("#prediction-list").append(<li>${p.className}: ${p.probability.toFixed(6)}</li>);
+// 			});
+// 	});
