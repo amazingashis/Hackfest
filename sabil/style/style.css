@@ -145,8 +145,8 @@
 
 /* Animation */
 .animation-type-writer {
-  -webkit-animation: typewriter 4s steps(22) 1s 1 normal both, blinkTextCursor 500ms steps(22) infinite normal;
-          animation: typewriter 4s steps(22) 1s 1 normal both, blinkTextCursor 500ms steps(22) infinite normal;
+  -webkit-animation: typewriter 4s steps(24) 1s 1 normal both, blinkTextCursor 500ms steps(24) infinite normal;
+          animation: typewriter 4s steps(24) 1s 1 normal both, blinkTextCursor 500ms steps(24) infinite normal;
 }
 
 @-webkit-keyframes typewriter {
@@ -154,7 +154,7 @@
     width: 0;
   }
   to {
-    width: 32rem;
+    width: 34rem;
   }
 }
 
@@ -163,7 +163,7 @@
     width: 0;
   }
   to {
-    width: 32rem;
+    width: 34rem;
   }
 }
 
@@ -189,6 +189,9 @@
   height: 90vh;
   background-image: radial-gradient(at 100% 100%, #075166 5%, #023848 40%, #002433 80%);
   background-size: cover;
+  -webkit-clip-path: ellipse(100% 55% at 48% 44%);
+          clip-path: ellipse(100% 55% at 48% 44%);
+  color: wheat;
 }
 
 .top-background .virtual-radio-batch {
@@ -199,6 +202,8 @@
   font-family: "Ubuntu", sans-serif;
   font-size: 1.6rem;
   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.178);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .top-background .f-icons {
@@ -212,7 +217,6 @@
 
 body {
   background-color: aliceblue;
-  color: wheat;
 }
 
 div {

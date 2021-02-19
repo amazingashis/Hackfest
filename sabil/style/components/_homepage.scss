@@ -9,6 +9,8 @@
     #002433 80%
   );
   background-size: cover;
+  clip-path: ellipse(100% 55% at 48% 44%);
+  color: wheat;
 
   // #41295a, #2f0743
   .virtual-radio-batch {
@@ -19,6 +21,8 @@
     font-family: "Ubuntu", sans-serif;
     font-size: 1.6rem;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.178);
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
   }
   .f-icons {
     padding-top: 2rem;
