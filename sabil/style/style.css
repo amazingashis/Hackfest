@@ -230,11 +230,52 @@
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.459);
 }
 
-body {
-  background-color: aliceblue;
+.all-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem 0;
 }
 
-div {
+.how-it-works {
+  margin: 6rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.circle {
+  height: 170px;
+  width: 170px;
+  border-radius: 100%;
+  background-color: #ffd05b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.circle-img {
+  height: 93px;
+}
+
+body {
+  background-color: aliceblue;
   font-family: "Roboto Slab", serif;
 }
 /*# sourceMappingURL=style.css.map */
