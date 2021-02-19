@@ -6,7 +6,7 @@
 
 
 </head> 
-<body><img id="img" src="trial1.jpg"></img></body>  
+<body><img id="img" src="trial.png"></img></body>  
 <script>
     
     async function run(){
@@ -25,12 +25,20 @@
 		.resizeNearestNeighbor([50, 50]) // change the image size
 		.expandDims()
 		.toFloat();
-        console.log(tensor)
+        // console.log(tensor)
 
 
-        const result = model.predict(tensor);
+        const result = model.predict(tensor).data();
+        // alert(result)
+        result.then((res) => {
+            if(res[0] == 1){
+                console.log('chest')
+            }
+            else{
+                console.log('Skull')
+            }
+        })
 
-        alert(result)
     });
 </script> 
 </html>
