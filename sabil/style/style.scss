@@ -1,0 +1,14 @@
+@import "./config//tester";
+@import "./config/font";
+@import "./components//scanner";
+@import "./components/typeAnimation";
+@import "./components/homepage";
+
+body {
+  background-color: aliceblue;
+  color: wheat;
+}
+
+div {
+  font-family: "Roboto Slab", serif;
+}

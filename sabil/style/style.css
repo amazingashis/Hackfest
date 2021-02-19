@@ -1,0 +1,221 @@
+.anothertest {
+  height: 1px;
+  width: 2px;
+}
+
+.lion {
+  height: 11px;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../../assets/font/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf");
+  font-weight: 400;
+}
+
+.scanner {
+  width: 230px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.scanner span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(240, 130, 130, 0.54);
+  z-index: 1;
+  -webkit-transform: translateY(135%);
+          transform: translateY(135%);
+  -webkit-animation: scan 2.9s cubic-bezier(0.15, 0.44, 0.76, 0.64);
+          animation: scan 2.9s cubic-bezier(0.15, 0.44, 0.76, 0.64);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.scanner > div {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 48%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.scanner:before, .scanner:after,
+.scanner em:after,
+.scanner em:before {
+  border-color: #f0eaea;
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 16px;
+  border-style: solid;
+  border-width: 0px;
+}
+
+.scanner:before {
+  left: 0;
+  top: 0;
+  border-left-width: 1px;
+  border-top-width: 1px;
+}
+
+.scanner:after {
+  right: 0;
+  top: 0;
+  border-right-width: 1px;
+  border-top-width: 1px;
+}
+
+.scanner em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.scanner em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+}
+
+@-webkit-keyframes scan {
+  0% {
+    -webkit-transform: translateY(135%);
+            transform: translateY(135%);
+  }
+  40% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateY(257px);
+            transform: translateY(257px);
+  }
+  100% {
+    -webkit-transform: translateY(135%);
+            transform: translateY(135%);
+  }
+}
+
+@keyframes scan {
+  0% {
+    -webkit-transform: translateY(135%);
+            transform: translateY(135%);
+  }
+  40% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  75% {
+    -webkit-transform: translateY(257px);
+            transform: translateY(257px);
+  }
+  100% {
+    -webkit-transform: translateY(135%);
+            transform: translateY(135%);
+  }
+}
+
+.a-line {
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: roboto;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.384);
+  font-weight: 800;
+  font-size: 60px;
+}
+
+/* Animation */
+.animation-type-writer {
+  -webkit-animation: typewriter 4s steps(22) 1s 1 normal both, blinkTextCursor 500ms steps(22) infinite normal;
+          animation: typewriter 4s steps(22) 1s 1 normal both, blinkTextCursor 500ms steps(22) infinite normal;
+}
+
+@-webkit-keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 32rem;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 32rem;
+  }
+}
+
+@-webkit-keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.top-background {
+  height: 90vh;
+  background-image: radial-gradient(at 100% 100%, #075166 5%, #023848 40%, #002433 80%);
+  background-size: cover;
+}
+
+.top-background .virtual-radio-batch {
+  padding: 1.2rem 1.6rem;
+  background-color: rgba(255, 235, 205, 0.267);
+  display: inline-block;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.6rem;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.178);
+}
+
+.top-background .f-icons {
+  padding-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.top-background .f-icons i {
+  margin: 0 0.8rem;
+}
+
+body {
+  background-color: aliceblue;
+  color: wheat;
+}
+
+div {
+  font-family: "Roboto Slab", serif;
+}
+/*# sourceMappingURL=style.css.map */
