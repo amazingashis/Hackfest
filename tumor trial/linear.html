@@ -29,10 +29,22 @@
         console.log(tensor)
 
 
-        const result = model.predict(tensor);
+        
+        const result = model.predict(tensor).data();
 
-        alert(result)
-        console.log(result)
+        result.then((res) => {
+        if(res[0] == 1){
+            console.log('Yes')
+            alert('Yes')
+        }
+        else{
+            console.log('no')
+            alert('no')
+        }
+    })
+
+    //alert(result)
+    console.log(result)
     });
 </script> 
 </html>
