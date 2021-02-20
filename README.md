@@ -9,6 +9,7 @@ Virtual Radiologist is an application to detect pneumonia and brain tumor throug
  
 ```bash
 > git clone https://github.com/amazingashis/Hackfest.git
+> cd Hackfest
 > cd code
 > npm install
 > npm start
