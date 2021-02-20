@@ -343,16 +343,26 @@
   background-image: radial-gradient(at 100% 100%, #097fa0 5%, #077292 80%);
 }
 
+.buttons:focus {
+  outline: none;
+}
+
 .our-mission {
   margin: 6rem 0;
   padding: 8rem 0;
   background-color: #e8f2ee;
 }
 
+.our-mission .objective-img .in-img {
+  height: 280px;
+  margin-left: 2rem;
+}
+
 .our-mission .bolder {
   font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 1px;
+  padding: 1rem 0 1.1rem 0;
 }
 
 .our-mission .objectives {

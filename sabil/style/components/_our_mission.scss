@@ -2,10 +2,17 @@
   margin: 6rem 0;
   padding: 8rem 0;
   background-color: #e8f2ee;
+  .objective-img {
+    .in-img {
+      height: 280px;
+      margin-left: 2rem;
+    }
+  }
   .bolder {
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 1px;
+    padding: 1rem 0 1.1rem 0;
   }
   .objectives {
     font-weight: 400;

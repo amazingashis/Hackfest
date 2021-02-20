@@ -35,4 +35,7 @@
   &:hover {
     background-image: radial-gradient(at 100% 100%, #097fa0 5%, #077292 80%);
   }
+  &:focus {
+    outline: none;
+  }
 }
