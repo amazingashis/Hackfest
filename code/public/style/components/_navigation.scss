@@ -1,0 +1,154 @@
+.navigation-bar {
+  width: 100%;
+  height: 56px;
+  background-image: radial-gradient(at 100% 80%, #064c60, #002433);
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: wheat;
+  z-index: 1000;
+  .flexter {
+    display: flex;
+    justify-content: space-between;
+  }
+  .virtual-radio {
+    padding: 1rem 1.2rem 0.7rem 1.2rem;
+    background-color: rgba(255, 235, 205, 0.267);
+    display: inline-block;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.178);
+  }
+  .f-iconss {
+    padding-top: 0.9rem;
+    font-size: 1.2rem;
+    i {
+      margin: 0 0.8rem;
+    }
+  }
+}
+//choose files-------------
+.filelabel {
+  width: 120px;
+  border: 2px dashed grey;
+  border-radius: 5px;
+  display: block;
+  padding: 5px;
+  transition: border 300ms ease;
+  cursor: pointer;
+  text-align: center;
+  margin: 0;
+}
+.filelabel i {
+  display: block;
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+.filelabel i,
+.filelabel .title {
+  color: grey;
+  transition: 200ms color;
+}
+.filelabel:hover {
+  border: 2px solid #1665c4;
+}
+.filelabel:hover i,
+.filelabel:hover .title {
+  color: #1665c4;
+}
+#image-selector {
+  display: none;
+}
+
+//takefile-------
+.take-file {
+  margin-left: 45%;
+}
+
+.predict-btn-decor {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.123);
+  border-radius: 0.6em;
+
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.596);
+
+  &:hover,
+  &:focus {
+    color: rgb(245, 232, 207);
+    outline: 0;
+  }
+}
+$turquoise: #159279;
+.decor {
+  border-radius: 3em;
+  border-color: $turquoise;
+  color: #fff;
+  background: {
+    image: linear-gradient(
+      to right,
+      transparentize($turquoise, 0.4),
+      transparentize($turquoise, 0.4) 5%,
+      $turquoise 5%,
+      $turquoise 10%,
+      transparentize($turquoise, 0.4) 10%,
+      transparentize($turquoise, 0.4) 15%,
+      $turquoise 15%,
+      $turquoise 20%,
+      transparentize($turquoise, 0.4) 20%,
+      transparentize($turquoise, 0.4) 25%,
+      $turquoise 25%,
+      $turquoise 30%,
+      transparentize($turquoise, 0.4) 30%,
+      transparentize($turquoise, 0.4) 35%,
+      $turquoise 35%,
+      $turquoise 40%,
+      transparentize($turquoise, 0.4) 40%,
+      transparentize($turquoise, 0.4) 45%,
+      $turquoise 45%,
+      $turquoise 50%,
+      transparentize($turquoise, 0.4) 50%,
+      transparentize($turquoise, 0.4) 55%,
+      $turquoise 55%,
+      $turquoise 60%,
+      transparentize($turquoise, 0.4) 60%,
+      transparentize($turquoise, 0.4) 65%,
+      $turquoise 65%,
+      $turquoise 70%,
+      transparentize($turquoise, 0.4) 70%,
+      transparentize($turquoise, 0.4) 75%,
+      $turquoise 75%,
+      $turquoise 80%,
+      transparentize($turquoise, 0.4) 80%,
+      transparentize($turquoise, 0.4) 85%,
+      $turquoise 85%,
+      $turquoise 90%,
+      transparentize($turquoise, 0.4) 90%,
+      transparentize($turquoise, 0.4) 95%,
+      $turquoise 95%,
+      $turquoise 100%
+    );
+    position: 0 0;
+    size: 100%;
+  }
+  transition: background 300ms ease-in-out;
+
+  &:hover {
+    background-position: 100px;
+  }
+}
