@@ -14,7 +14,7 @@ $(document).ready(async function () {
     document.getElementById("model-status").innerHTML =
       "<strong>Loaded model...</strong>";
     modelLoaded = true;
-  }, 2200);
+  }, 1600);
 });
 
 $(".predict-btn").click(async function () {
@@ -62,10 +62,16 @@ $(".predict-btn").click(async function () {
           console.log("Yes");
           // alert("Yes");
           $(".pnemonia").show();
+          $(".tuberculosis").hide();
+          $(".congratulations").hide();
+          $(".brain-tumor").hide();
         } else {
           console.log("no");
           // alert("no");
           $(".congratulations").show();
+          $(".tuberculosis").hide();
+          $(".pnemonia").hide();
+          $(".brain-tumor").hide();
         }
       });
     } else {
@@ -83,10 +89,16 @@ $(".predict-btn").click(async function () {
           console.log("Yes");
           // alert("Yes");
           $(".brain-tumor").show();
+          $(".tuberculosis").hide();
+          $(".congratulations").hide();
+          $(".pnemonia").hide();
         } else {
           console.log("no");
           // alert("no");
           $(".congratulations").show();
+          $(".tuberculosis").hide();
+          $(".pnemonia").hide();
+          $(".brain-tumor").hide();
         }
       });
     }
@@ -153,7 +165,7 @@ $(".pnemonia").hide();
 $(".brain-tumor").hide();
 
 function goToPredict() {
-  window.location.href = "./predict";
+  window.location.href = "./predict.html";
 }
 function onFileSelected(event) {
   //for scanner

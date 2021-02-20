@@ -406,6 +406,7 @@
   top: 0;
   left: 0;
   color: wheat;
+  z-index: 1000;
 }
 
 .navigation-bar .flexter {
