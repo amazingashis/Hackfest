@@ -291,14 +291,49 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 2rem;
-  background-color: #7fdda8;
+  background-image: radial-gradient(at 100% 100%, #075166 5%, #023848 70%);
   border: 1px solid rgba(0, 128, 0, 0.089);
-  color: #05475a;
+  color: wheat;
   text-shadow: 1px 1px 10px rgba(34, 21, 21, 0);
   font-weight: 600;
   font-size: 1.2rem;
   -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.205);
           box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.205);
+}
+
+.go-to-detect {
+  margin: 6rem 0;
+  padding: 8rem 0;
+  background-color: #e8f2ee;
+}
+
+.go-to-detect .try {
+  font-size: 2.3rem;
+  padding: 1rem 0 1.1rem 0;
+}
+
+.go-to-detect .virtual-explain {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.438);
+}
+
+.go-to-detect .buttons {
+  margin: 1.5rem 0;
+  padding: 0.78rem 1.7rem;
+  border-radius: 2rem;
+  font-size: 1.05rem;
+  outline: none;
+  color: #f8e9cd;
+  border: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-image: radial-gradient(at 100% 100%, #075166 5%, #023848 80%);
+}
+
+.go-to-detect .buttons:hover {
+  background-image: radial-gradient(at 100% 100%, #097fa0 5%, #077292 80%);
 }
 
 body {
