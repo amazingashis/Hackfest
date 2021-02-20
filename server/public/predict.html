@@ -1,39 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
-    <title>Document</title>
-</head>
-<body>
-    <img id="img" src="trial.png" width="200"></img>
-    <br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <!-- --------------------------------------------------------- -->
+    <link rel="stylesheet" href="./style/style.css" />
+    <!-- --------------------------------------------------------- -->
+    <title>Predict</title>
+  </head>
+  <body>
+    <!-- <img id="img" src="trial.png" width="200" />
+    <br /> -->
+    <header class="navigation-bar">
+      <div class="container">
+        <div class="flexter">
+          <span class="virtual-radio"> VIRTUAL RADIOLOGIST</span>
+          <div class="f-iconss">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-github-alt"></i>
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- --------------------------Modal loading------------------------------- -->
+
+    <div style="height: 70px"></div>
 
     <p id="model-status"></p>
-    <div class="progress progress-bar progress-bar-striped progress-bar-animated mb-2">Loading Model</div>
-    <input id="image-selector" type="file">
-     <br>
-
-    <img id="selected-image">
-
-    <div>
-        <button class="predict-btn">Predict</button>
+    <div
+      class="progress progress-bar progress-bar-striped progress-bar-animated mb-2"
+    >
+      Loading Model
     </div>
+    <!-- --------------------------Choose File------------------------------- -->
+    <!-- ---------------------------------------------------------change -->
+    <div class="take-file">
+      <div>
+        <div>
+          <label class="filelabel">
+            <i class="fa fa-paperclip"> </i>
+            <span class="title"> Add X-ray </span>
 
-    
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <input
+              class="FileUpload1"
+              id="image-selector"
+              type="file"
+              name="booking_attachment"
+              onchange="onFileSelected(event)"
+            />
+          </label>
+        </div>
+        <div>
+          <button class="predict-btn predict-btn-decor decor">Predict</button>
+        </div>
+      </div>
+    </div>
+    <!-- <input id="image-selector" type="file" onchange="onFileSelected(event)" /> -->
+    <br />
+
+    <!-- <img id="selected-image" /> -->
+    <section class="predict-image">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-12">
+            <!-- ---------------------------------------------------------left images----------- -->
+            <div style="height: 350px">
+              <div id="scanner" class="scanner" style="display: none">
+                <em></em>
+                <img
+                  id="selected-image"
+                  style="height: 100%; width: 100%; object-fit: cover"
+                />
+                <!-- here class name to switch off after scan -->
+                <span class="span-real-scanner"> </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <span class="after-prediction-results">
+              <span class="congratulations">
+                Congratulations! You are healthy.
+              </span>
+              <span class="tuberculosis">
+                <inside>
+                  Our Model Detected tuberculosis in your X-ray. Please consult
+                  a specialist for further checkup.
+                </inside>
+                <br />
+                <h2>Treatment</h2>
+                Medications are the cornerstone of tuberculosis treatment. But
+                treating TB takes much longer than treating other types of
+                bacterial infections.
+                <br />
+                <br />
+                For active tuberculosis, you must take antibiotics for at least
+                six to nine months. The exact drugs and length of treatment
+                depend on your age, overall health, possible drug resistance and
+                the infection's location in the body.
+                <br />
+                <br />
+                <h4>Most common TB drugs</h4>
+                If you have latent tuberculosis, you may need to take only one
+                or two types of TB drug. Active tuberculosis, particularly if
+                it's a drug-resistant strain, will require several drugs at
+                once. The most common medications used to treat tuberculosis
+                include:
+                <ul>
+                  <li>Isoniazid</li>
+                  <li>Rifampin (Rifadin, Rimactane)</li>
+                  <li>Ethambutol (Myambutol)</li>
+                  <li>Pyrazinamide</li>
+                </ul>
+              </span>
+              <span class="pnemonia">
+                <inside>
+                  Our Model Detected Pnemonia in your X-ray. Please consult a
+                  specialist for further checkup.
+                </inside>
+              </span>
+              <span class="brain-tumor">
+                <inside>
+                  Our Model Detected Brain tumor in your X-ray. Please consult a
+                  specialist for further checkup.
+                </inside>
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ---------------------------------------------------------footer -->
+    <footer class="footer" id="footer">
+      <section class="footer-first">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <h2>Virtual Radiologist</h2>
+              <p>Connect with us</p>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <h3>Have a question?</h3>
+              <div>
+                <span class="fa fa-address-book"></span>
+                <span class="footer-first-explore-inside"
+                  >Kathmandu University, Dhulikhel, Kavre,
+                  <span style="margin-left: 18px; opacity: 0">.</span>
+                  Nepal</span
+                >
+              </div>
+            </div>
+            <div
+              class="col-xl-4 col-md-12 col-sm-12 text-center text-align-right-mobile"
+            >
+              <h3>Explore</h3>
+              <div class="footer-first-explore">
+                <span class="fa fa-home"></span>
+                <span class="footer-first-explore-inside">Home</span>
+              </div>
+              <div class="footer-first-explore">
+                <span class="fa fa-envelope"></span>
+                <span class="footer-first-explore-inside">Email</span>
+              </div>
+              <div class="footer-first-explore">
+                <span class="fa fa-circle"></span>
+                <span class="footer-first-explore-inside">About</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer-second text-center">
+        <div class="container">
+          Copyrights &copy;2021 All rights reserved | This website is made with
+          <span class="fa fa-heart" style="color: rgb(250, 127, 127)"></span> by
+          Virtual Radiologist
+        </div>
+      </section>
+    </footer>
+    <!-- FOOTER ENDS -->
+    <!-- ---------------------------------------------------------New----------- -->
+
+    <!-- ---------------------------------------------------------Script -->
+    <script>
+      function onFileSelected(event) {
+        //for scanner
+        var scannner = document.getElementById("scanner");
+        scanner.style.display = "block";
+
+        var selectedFile = event.target.files[0];
+        var reader = new FileReader();
+
+        var imgtag = document.getElementById("selected-image");
+        imgtag.title = selectedFile.name;
+
+        reader.onload = function (event) {
+          imgtag.src = event.target.result;
+        };
+
+        reader.readAsDataURL(selectedFile);
+        //this to stop scan after 3sec
+        setTimeout(stopScan, 3000);
+      }
+      function stopScan() {
+        let stopScan = document.getElementsByClassName("span-real-scanner");
+        //stopScan is array as there are many classes
+        //so use the first one
+        stopScan[0].style.display = "none";
+        // alert("lion");
+      }
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
-
-
- 
-
