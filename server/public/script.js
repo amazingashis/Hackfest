@@ -9,9 +9,12 @@ $(document).ready(async function () {
   model = await tf.loadLayersModel(MODEL_URL);
   tumormodel = await tf.loadLayersModel(TUMOR_MODEL_URL);
   peumoniamodel = await tf.loadLayersModel(PNEUMONIA_MODEL_URL);
-  $(".progress-bar").hide();
-  document.getElementById("model-status").innerHTML = "Loaded model...";
-  modelLoaded = true;
+  setTimeout(function () {
+    $(".progress-bar").hide();
+    document.getElementById("model-status").innerHTML =
+      "<strong>Loaded model...</strong>";
+    modelLoaded = true;
+  }, 2200);
 });
 
 $(".predict-btn").click(async function () {
@@ -57,9 +60,11 @@ $(".predict-btn").click(async function () {
         if (res[0] == 1) {
           console.log("Yes");
           alert("Yes");
+          $(".pnemonia").show();
         } else {
           console.log("no");
           alert("no");
+          $(".congratulations").show();
         }
       });
     } else {
@@ -76,27 +81,29 @@ $(".predict-btn").click(async function () {
         if (res[0] == 1) {
           console.log("Yes");
           alert("Yes");
+          $(".brain-tumor").show();
         } else {
           console.log("no");
           alert("no");
+          $(".congratulations").show();
         }
       });
     }
   });
 });
 
-// let imageLoaded = false;
-// $("#image-selector").change(function () {
-// 	let reader = new FileReader();
-// 	reader.onload = function () {
-// 		let dataURL = reader.result;
-// 		$("#selected-image").attr("src", dataURL);
-//         imageLoaded = true;
-// 	}
+let imageLoaded = false;
+$("#image-selector").change(function () {
+  let reader = new FileReader();
+  reader.onload = function () {
+    let dataURL = reader.result;
+    $("#selected-image").attr("src", dataURL);
+    imageLoaded = true;
+  };
 
-// 	let file = $("#image-selector").prop('files')[0];
-// 	reader.readAsDataURL(file);
-// });
+  let file = $("#image-selector").prop("files")[0];
+  reader.readAsDataURL(file);
+});
 //------------------------------------------------------------------------------------new------------------
 
 //not so important
@@ -143,3 +150,7 @@ $(".tuberculosis").hide();
 $(".congratulations").hide();
 $(".pnemonia").hide();
 $(".brain-tumor").hide();
+
+function goToPredict() {
+  window.location.href = "./predict";
+}

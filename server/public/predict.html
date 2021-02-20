@@ -52,12 +52,13 @@
     <!-- --------------------------Modal loading------------------------------- -->
 
     <div style="height: 70px"></div>
-
-    <p id="model-status"></p>
-    <div
-      class="progress progress-bar progress-bar-striped progress-bar-animated mb-2"
-    >
-      Loading Model
+    <div class="container">
+      <p id="model-status"></p>
+      <div
+        class="progress progress-bar progress-bar-striped progress-bar-animated mb-2"
+      >
+        Loading Model
+      </div>
     </div>
     <!-- --------------------------Choose File------------------------------- -->
     <!-- ---------------------------------------------------------change -->
@@ -78,7 +79,8 @@
           </label>
         </div>
         <div>
-          <button class="predict-btn predict-btn-decor decor">Predict</button>
+          <!-- <button class="predict-btn predict-btn-decor decor">Predict</button> -->
+          <button class="predict-btn">Predict</button>
         </div>
       </div>
     </div>
@@ -208,7 +210,7 @@
     <!-- ---------------------------------------------------------New----------- -->
 
     <!-- ---------------------------------------------------------Script -->
-    <script>
+    <!-- <script>
       function onFileSelected(event) {
         //for scanner
         var scannner = document.getElementById("scanner");
@@ -235,7 +237,7 @@
         stopScan[0].style.display = "none";
         // alert("lion");
       }
-    </script>
+    </script> -->
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
