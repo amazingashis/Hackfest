@@ -16,8 +16,8 @@
 /* Animation */
 .animation-type-writer {
   //step() is number of letter
-  animation: typewriter 4s steps(24) 1s 1 normal both,
-    blinkTextCursor 500ms steps(24) infinite normal;
+  animation: typewriter 4s steps(27) 1s 1 normal both,
+    blinkTextCursor 500ms steps(27) infinite normal;
 }
 @keyframes typewriter {
   from {
@@ -25,7 +25,7 @@
   }
   to {
     //this is the width of animation
-    width: 34rem;
+    width: 36rem;
   }
 }
 @keyframes blinkTextCursor {

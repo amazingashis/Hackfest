@@ -79,8 +79,8 @@
           </label>
         </div>
         <div>
-          <!-- <button class="predict-btn predict-btn-decor decor">Predict</button> -->
-          <button class="predict-btn">Predict</button>
+          <button class="predict-btn predict-btn-decor decor">Predict</button>
+          <!-- <button class="predict-btn">Predict</button> -->
         </div>
       </div>
     </div>
@@ -107,7 +107,10 @@
           </div>
           <div class="col-lg-6 col-sm-12">
             <span class="after-prediction-results">
-              <span class="congratulations">
+              <span
+                class="congratulations"
+                style="display: flex; align-items: center"
+              >
                 Congratulations! You are healthy.
               </span>
               <span class="tuberculosis">
@@ -146,12 +149,64 @@
                   Our Model Detected Pnemonia in your X-ray. Please consult a
                   specialist for further checkup.
                 </inside>
+                <!-- /////do other----- -->
+                <br />
+                <h2>Treatment</h2>
+                Medications are the cornerstone of Pnemonia treatment. But
+                treating Pnemonia takes much longer than treating other types of
+                bacterial infections.
+                <br />
+                <br />
+                For active Pnemonia, you must take antibiotics for at least six
+                to nine months. The exact drugs and length of treatment depend
+                on your age, overall health, possible drug resistance and the
+                infection's location in the body.
+                <br />
+                <br />
+                <h4>Most common Pnemonia drugs</h4>
+                If you have latent Pnemonia, you may need to take only one or
+                two types of Pnemonia drug. Active Pnemonia, particularly if
+                it's a drug-resistant strain, will require several drugs at
+                once. The most common medications used to treat tuberculosis
+                include:
+                <ul>
+                  <li>Isoniazid</li>
+                  <li>Rifampin (Rifadin, Rimactane)</li>
+                  <li>Ethambutol (Myambutol)</li>
+                  <li>Pyrazinamide</li>
+                </ul>
               </span>
               <span class="brain-tumor">
                 <inside>
                   Our Model Detected Brain tumor in your X-ray. Please consult a
                   specialist for further checkup.
                 </inside>
+                <!-- ----------------- -->
+                <br />
+                <h2>Treatment</h2>
+                Medications are the cornerstone of Brain tumor treatment. But
+                treating Brain tumor takes much longer than treating other types
+                of bacterial infections.
+                <br />
+                <br />
+                For active Brain tumor, you must take antibiotics for at least
+                six to nine months. The exact drugs and length of treatment
+                depend on your age, overall health, possible drug resistance and
+                the infection's location in the body.
+                <br />
+                <br />
+                <h4>Most common Tumor drugs</h4>
+                If you have latent Brain tumor, you may need to take only one or
+                two types of Brain tumor drug. Active Brain tumor, particularly
+                if it's a drug-resistant strain, will require several drugs at
+                once. The most common medications used to treat Brain tumor
+                include:
+                <ul>
+                  <li>Isoniazid</li>
+                  <li>Rifampin (Rifadin, Rimactane)</li>
+                  <li>Ethambutol (Myambutol)</li>
+                  <li>Pyrazinamide</li>
+                </ul>
               </span>
             </span>
           </div>
@@ -210,34 +265,14 @@
     <!-- ---------------------------------------------------------New----------- -->
 
     <!-- ---------------------------------------------------------Script -->
-    <!-- <script>
-      function onFileSelected(event) {
-        //for scanner
-        var scannner = document.getElementById("scanner");
-        scanner.style.display = "block";
-
-        var selectedFile = event.target.files[0];
-        var reader = new FileReader();
-
-        var imgtag = document.getElementById("selected-image");
-        imgtag.title = selectedFile.name;
-
-        reader.onload = function (event) {
-          imgtag.src = event.target.result;
-        };
-
-        reader.readAsDataURL(selectedFile);
-        //this to stop scan after 3sec
-        setTimeout(stopScan, 3000);
-      }
-      function stopScan() {
-        let stopScan = document.getElementsByClassName("span-real-scanner");
-        //stopScan is array as there are many classes
-        //so use the first one
-        stopScan[0].style.display = "none";
-        // alert("lion");
-      }
-    </script> -->
+    <script>
+      // function onFileSelected(event) {
+      //   //for scanner
+      //   var scannner = document.getElementById("scanner");
+      //   scanner.style.display = "block";
+      //   // setTimeout(stopScan, 3000);
+      // }
+    </script>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

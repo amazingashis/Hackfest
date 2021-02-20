@@ -145,8 +145,8 @@
 
 /* Animation */
 .animation-type-writer {
-  -webkit-animation: typewriter 4s steps(24) 1s 1 normal both, blinkTextCursor 500ms steps(24) infinite normal;
-          animation: typewriter 4s steps(24) 1s 1 normal both, blinkTextCursor 500ms steps(24) infinite normal;
+  -webkit-animation: typewriter 4s steps(27) 1s 1 normal both, blinkTextCursor 500ms steps(27) infinite normal;
+          animation: typewriter 4s steps(27) 1s 1 normal both, blinkTextCursor 500ms steps(27) infinite normal;
 }
 
 @-webkit-keyframes typewriter {
@@ -154,7 +154,7 @@
     width: 0;
   }
   to {
-    width: 34rem;
+    width: 36rem;
   }
 }
 
@@ -163,7 +163,7 @@
     width: 0;
   }
   to {
-    width: 34rem;
+    width: 36rem;
   }
 }
 

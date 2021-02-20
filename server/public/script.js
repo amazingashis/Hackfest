@@ -46,6 +46,7 @@ $(".predict-btn").click(async function () {
   const result = model.predict(tensor).data();
   // alert(result)
   result.then((res) => {
+    stopScan();
     if (res[0] == 1) {
       let tensor = tf.browser
         .fromPixels(img, 1)
@@ -59,11 +60,11 @@ $(".predict-btn").click(async function () {
       result.then((res) => {
         if (res[0] == 1) {
           console.log("Yes");
-          alert("Yes");
+          // alert("Yes");
           $(".pnemonia").show();
         } else {
           console.log("no");
-          alert("no");
+          // alert("no");
           $(".congratulations").show();
         }
       });
@@ -80,11 +81,11 @@ $(".predict-btn").click(async function () {
       result.then((res) => {
         if (res[0] == 1) {
           console.log("Yes");
-          alert("Yes");
+          // alert("Yes");
           $(".brain-tumor").show();
         } else {
           console.log("no");
-          alert("no");
+          // alert("no");
           $(".congratulations").show();
         }
       });
@@ -153,4 +154,16 @@ $(".brain-tumor").hide();
 
 function goToPredict() {
   window.location.href = "./predict";
+}
+function onFileSelected(event) {
+  //for scanner
+  var scanner = document.getElementById("scanner");
+  scanner.style.display = "block";
+  // setTimeout(stopScan, 3000);
+}
+
+function stopScan() {
+  let stopScan = document.getElementsByClassName("span-real-scanner");
+
+  stopScan[0].style.display = "none";
 }
