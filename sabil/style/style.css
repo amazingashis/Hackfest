@@ -248,7 +248,7 @@
 }
 
 .how-it-works {
-  margin: 6rem 0;
+  margin: 8rem 0;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -325,7 +325,7 @@
   text-align: start;
 }
 
-.go-to-detect .buttons {
+.buttons {
   margin: 1.5rem 0;
   padding: 0.78rem 1.7rem;
   border-radius: 2rem;
@@ -339,8 +339,28 @@
   background-image: radial-gradient(at 100% 100%, #075166 5%, #023848 80%);
 }
 
-.go-to-detect .buttons:hover {
+.buttons:hover {
   background-image: radial-gradient(at 100% 100%, #097fa0 5%, #077292 80%);
+}
+
+.our-mission {
+  margin: 6rem 0;
+  padding: 8rem 0;
+  background-color: #e8f2ee;
+}
+
+.our-mission .bolder {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.our-mission .objectives {
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.6px;
+  color: rgba(0, 0, 0, 0.438);
+  text-align: start;
 }
 
 body {
